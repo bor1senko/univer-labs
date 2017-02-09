@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div id="conten" class="container">
+  <div class="search-div">
+    <form id="search" class="search" action="#" method="post">
+      <input id="q-text" type="text" name="q" value="поиск" title="поиск"
+      onblur="this.value=(this.value=='')?this.title:this.value;"
+     onfocus="this.value=(this.value==this.title)?'':this.value;">
+    <button classtype="submit" name="button"> <span class="glyphicon glyphicon-search"></span></button>
+  </form>
+  </div>
+  </div>
+
+
+
+
+
+  <div id="hidelayout" class="hidelayout"> </div>
+  <form id="popup" class="popup" action="index.html" method="post">
+    <p>
+      <input type="text" name="" value="">
+      <span class="glyphicon glyphicon-user"></span>
+    </p>
+    <p>
+      <input type="password" name="" value="">
+      <span class="glyphicon glyphicon-lock"></span>
+    </p>
+    <input class="check_pc" type="checkbox" name="" value="">
+    <span id="pc">чужой компьютер</span>
+    <input id="btn" type="submit" name="" value="Войти">
+    <a class="log_a" href="#">Зарегистрироваться</a>
+    <a class="pas_a" href="#">Забыли пароль ?</a>
+  </form>
+
+{% endblock %}
