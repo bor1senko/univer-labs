@@ -5,14 +5,14 @@ from forms import SignUpForm
 from django.contrib import messages
 
 def index(request):
-     return render(request, 'admin_UI/index.html')
+    return render(request, 'admin_UI/index.html')
 
 
 def signup(request):
     if request.method == 'GET':
         form = SignUpForm()
     if request.method == 'POST':
-        form = SignUpForm(request.POST)
+        form = SignUpForm(request.POST, request.FILES or None)
         if form.is_valid():
             form.save()
             return HttpResponseRedirect('/')

@@ -3,7 +3,7 @@
 
 {% block content %}
 
-  <form class="signUpForm" action="/signup/" method="post">
+  <form class="signUpForm" action="/signup/" enctype="multipart/form-data" method="post">
       <img id="avatar_loader" class="img-circle  avatar_loader" src="{% static 'img/logo/anonym.png' %}" alt="">
     {% csrf_token %}
     {{form.as_p}}

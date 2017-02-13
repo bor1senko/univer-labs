@@ -40,9 +40,11 @@ class SignUpForm(forms.ModelForm):
         pas1 = self.cleaned_data.get('password')
         pas2 = self.cleaned_data.get('password2')
         email = self.cleaned_data.get('email')
-        print self.cleaned_data.get('avatar')
         if self.cleaned_data.get('avatar') == None:
             raise forms.ValidationError("Image is None")
         if pas1 != pas2:
             self.add_error('password2', "пароли должны совпадать")
+        else:
+            if len(pas1) < 8:
+                self.add_error('password', "малое количество символов")
         return super(SignUpForm, self).clean(*args, **kwargs)
