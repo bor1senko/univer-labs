@@ -16,13 +16,15 @@
   <body>
     <div id="navbar" class="container-fluid ">
       <h2 class="navbarTitle">Labs.com</h3>
-      <p id="signin" class="btnlog">Войти</p>
+        {% block signin %}
+          
+        {% endblock %}
     </div>
 
       {% block content %}
       {% endblock %}
 
-    
+
 
   </body>
 </html>

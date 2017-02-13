@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+  <form class="signUpForm" action="/signup/" method="post">
+      <img id="avatar_loader" class="img-circle  avatar_loader" src="{% static 'img/logo/anonym.png' %}" alt="">
+    {% csrf_token %}
+    {{form.as_p}}
+    <div class="form_footer">
+        <input type="submit" name="" value="Зарегистрироваться">
+    </div>
+  </form>
+
+
+{% endblock %}

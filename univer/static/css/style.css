@@ -42,7 +42,7 @@
  height: 30px;
  background-color: white;
  border: 1px solid #5e5e5e;
- box-shadow: 0 0 5px black;
+ box-shadow: 0 0 15px black;
  padding-left: 10px;
 }
 
@@ -164,4 +164,86 @@
 #popup #pc:hover {
   color: #999999;
   cursor: default;
+}
+
+.signUpForm {
+  width: 500px;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border: 1px solid grey;
+  box-shadow: 0 0 15px black;
+  border-radius: 0 0 12px 12px;
+
+}
+
+.signUpForm p {
+  width: 500px;
+  margin-top: 20px;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.signUpForm p input {
+  position: absolute;
+   left: 200px;
+   width: 250px;
+   padding-left: 10px;
+}
+
+.signUpForm p label {
+  margin-left: 40px;
+}
+
+.signUpForm p select {
+  position: absolute;
+  left: 200px;
+}
+  
+p input#id_avatar {
+  position:inherit;
+  left: 190px;
+  margin-top: -25px;
+}
+
+.form_footer {
+  margin-top: 20px;
+  background-color:#325992;
+  height: 50px;
+  border-radius: 0 0 11px 11px;
+  position: relative;
+}
+
+.form_footer input {
+  width: 200px;
+  height: 35px;
+  position: absolute;
+  left: 150px;
+  top:7.5px;
+  background-color:#1e2327;
+  border-radius: 3px;
+  border: none;
+  color: white;
+}
+
+.form_footer input:hover {
+  background-color:#2b3136;
+}
+
+
+.avatar_loader {
+  width: 150px;
+  height: 150px;
+  margin-left: 175px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.error_field input {
+  border: 1px solid darkred;
+}
+
+.errorlist li {
+  color: darkred;
+  font-family: sans-serif;
 }
