@@ -2,7 +2,12 @@
 
 
 {% block signin %}
+{% if user %}
+  <a href="/accaunt/"> <p  class="btnlog">{{user.first_name}}</p></a>
+{% else %}
   <p id="signin" class="btnlog">Войти</p>
+{% endif %}
+
 {% endblock %}
 
 {% block content %}
@@ -19,13 +24,14 @@
 
 
   <div id="hidelayout" class="hidelayout"> </div>
-  <form id="popup" class="popup" action="index.html" method="post">
-    <p>
-      <input type="text" name="" value="">
+  <form id="popup" class="popup" action="/signin/" method="post">
+    {% csrf_token %}
+    <p id="p1">
+      <input type="text" name="email" value="">
       <span class="glyphicon glyphicon-user"></span>
     </p>
-    <p>
-      <input type="password" name="" value="">
+    <p id="p2">
+      <input type="password" name="password" value="">
       <span class="glyphicon glyphicon-lock"></span>
     </p>
     <input id="check_pc" class="check_pc" type="checkbox" name="" value="">

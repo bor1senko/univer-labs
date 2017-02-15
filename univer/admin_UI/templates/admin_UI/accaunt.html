@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block signin %}
+  <p id="signin" class="btnlog">{{user.first_name}}</p>
+{% endblock %}
+
+
+{% block content %}
+
+{{user}}
+
+<img src="{{user.avatar.url}}" alt="">
+
+<a href="/logout/">Выйти</a>
+{% endblock %}

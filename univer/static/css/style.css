@@ -42,7 +42,7 @@
  height: 30px;
  background-color: white;
  border: 1px solid #5e5e5e;
- box-shadow: 0 0 15px black;
+ box-shadow: 0 0 5px black;
  padding-left: 10px;
 }
 
@@ -105,8 +105,15 @@
   background-color: white;
 }
 
-#popup p:nth-child(2){
-  margin-top: 3px;
+#popup #p2{
+  position: absolute;
+  left: 25px;
+  top: 40px;
+}
+
+#popup #p1 {
+position: absolute;
+left: 25px;
 }
 
 #popup p span {
@@ -127,11 +134,11 @@
   width: 120px;
   position: absolute;
   right: 25px;
-  margin-top:23px;
+  top: 125px;
 }
 #popup a {
   position: absolute;
-  color: #5c5c5c;
+  color: #b8b8b8;
   top: 170px;
 }
 
@@ -199,7 +206,7 @@
   position: absolute;
   left: 200px;
 }
-  
+
 p input#id_avatar {
   position:inherit;
   left: 190px;
@@ -209,7 +216,7 @@ p input#id_avatar {
 .form_footer {
   margin-top: 20px;
   background-color:#325992;
-  height: 50px;
+  height: 60px;
   border-radius: 0 0 11px 11px;
   position: relative;
 }
@@ -219,7 +226,7 @@ p input#id_avatar {
   height: 35px;
   position: absolute;
   left: 150px;
-  top:7.5px;
+  top:12.5px;
   background-color:#1e2327;
   border-radius: 3px;
   border: none;
@@ -246,4 +253,11 @@ p input#id_avatar {
 .errorlist li {
   color: darkred;
   font-family: sans-serif;
+}
+
+.isnotactive {
+  color: #8b8b8b;
+  text-align: center;
+  margin: auto;
+  margin-top: 200px;
 }
