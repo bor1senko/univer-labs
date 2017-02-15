@@ -32,9 +32,11 @@ class Teacher(AbstractBaseUser):
 
     objects = UserManager()
 
-    def save(self):
-        self.set_password(self.password)
+    def save(self, update_fields=None):
+        if self.pk is None:
+            self.set_password(self.password)
         super(Teacher, self).save()
+
 
     def get_full_name(self):
         return self.email

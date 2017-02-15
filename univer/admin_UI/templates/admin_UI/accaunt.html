@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block signin %}
+  <p id="signin" class="btnlog">{{user.first_name}}</p>
+{% endblock %}
+
+
+{% block content %}
+
+{{user}}
+{% endblock %}

@@ -105,8 +105,15 @@
   background-color: white;
 }
 
-#popup p:nth-child(2){
-  margin-top: 3px;
+#popup #p2{
+  position: absolute;
+  left: 25px;
+  top: 40px;
+}
+
+#popup #p1 {
+position: absolute;
+left: 25px;
 }
 
 #popup p span {
@@ -127,7 +134,7 @@
   width: 120px;
   position: absolute;
   right: 25px;
-  margin-top:23px;
+  top: 120px;
 }
 #popup a {
   position: absolute;
@@ -199,7 +206,7 @@
   position: absolute;
   left: 200px;
 }
-  
+
 p input#id_avatar {
   position:inherit;
   left: 190px;
