@@ -40,18 +40,19 @@
 .search {
  width: 500px;
  height: 30px;
- background-color: white;
  border: 1px solid #5e5e5e;
  box-shadow: 0 0 5px black;
  padding-left: 10px;
+position: relative;
 }
 
 .search button{
   border: none;
   background-color: transparent;
   color: #325992;
-  margin-top: 3px;
-  margin-left: 2px;
+  position: absolute;
+  right: 4px;
+  top: 4px;
   font-size: 14px;
 }
 
@@ -62,9 +63,10 @@
 
 .search input {
   width: 450px;
-  margin-top: 1px;
   border: none;
   color: #4e4a4a;
+  position: absolute;
+  top:3px;
 }
 
 .search input:focus {
@@ -135,6 +137,7 @@ left: 25px;
   position: absolute;
   right: 25px;
   top: 125px;
+  border-radius: none;
 }
 #popup a {
   position: absolute;
