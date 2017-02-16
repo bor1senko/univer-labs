@@ -24,9 +24,11 @@ def signup(request):
             return HttpResponseRedirect('/')
     return render(request, 'admin_UI/signup.html', {'form': form})
 
+
 def accaunt(request):
     user =request.user
     return render(request, 'admin_UI/accaunt.html', {'user': user})
+
 
 def signin(request):
     if request.method == 'POST':
@@ -46,3 +48,5 @@ def signin(request):
 def logout_user(request):
     logout(request)
     return HttpResponseRedirect('/')
+
+            
