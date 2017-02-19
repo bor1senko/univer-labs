@@ -3,7 +3,7 @@
 
 {% block signin %}
 {% if user %}
-  <a href="/accaunt/"> <p  class="btnlog">{{user.first_name}}</p></a>
+  <a href="/accaunt/"> <p  class="btnlog user-f-name">{{user.first_name}}</p></a>
 {% else %}
   <p id="signin" class="btnlog">Войти</p>
 {% endif %}

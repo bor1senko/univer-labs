@@ -14,17 +14,19 @@
     <title>{% block title %}BSUIR Labs{% endblock %}</title>
   </head>
   <body>
-    <div id="navbar" class="container-fluid ">
-      <h2 class="navbarTitle">Labs.com</h3>
-        {% block signin %}
-          
-        {% endblock %}
-    </div>
+    <div id="wrapperr" calss="container-fluid">
+      <div id="navbar" class="container-fluid ">
+        <h2 class="navbarTitle">Labs.com</h3>
+          {% block signin %}
+
+          {% endblock %}
+        </div>
 
       {% block content %}
       {% endblock %}
-
-
+    </div>
+    {% block menu %}
+    {% endblock %}
 
   </body>
 </html>
