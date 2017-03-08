@@ -87,7 +87,9 @@ $('.dashboard-user li:first-child').click(function(){
   }
 });
 
-
+$('.add-subj').click(function(){
+  alert("sdfs");
+});
 
 
   function PositionCenter(elem){

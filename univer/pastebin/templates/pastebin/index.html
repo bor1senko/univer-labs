@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style media="screen">
+  .form_text {
+    width: 500px;
+    margin:auto;
+    padding-left: 0;
+
+  }
+
+  .form_text textarea {
+    width: 500px;
+    padding-left: 20px;
+    padding-top: 20px;
+  }
+
+</style>
+
+<form class="form_text" action="#" method="post">
+  <textarea name="name" rows="8" cols="80"></textarea> <br>
+  <input type="submit" name="" value="Go">
+</form>
+<p id="text_js_api" ></p>
+<button id="btn_get_data" type="button" name="button">данные получить</button>
+
+<script>
+$('#btn_get_data').click(function(){
+$.ajax({
+  url:'/api/pastebin/posts/',
+  type: 'GET',
+  dataType: 'json',
+  success: function(data){
+   console.log(data)
+   $('#text_js_api').text('данные: ' + data);
+ },
+ error:function(){
+    //$('#text_js_api').text('error');
+ }
+});
+});
+
+</script>
+
+
+{% endblock %}

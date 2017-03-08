@@ -194,7 +194,7 @@ left: 25px;
   margin-top: 50px;
   margin-bottom: 50px;
   border: 1px solid grey;
-  box-shadow: 0 0 15px black;
+  box-shadow: 0 0 5px black;
   border-radius: 0 0 12px 12px;
 
 }
@@ -421,7 +421,7 @@ p input#id_avatar {
   height: 20px;
   line-height: 20px;
   margin-top: 1px;
-  padding-left:50px;
+  padding-left:40px;
 }
 
 .dashboard-user li:hover{
@@ -447,7 +447,7 @@ p input#id_avatar {
 }
 
 .dashboard-user li:not(:first-child) {
-  padding-left: 54px;
+  padding-left: 44px;
 }
 
 .d-menu-arrow {

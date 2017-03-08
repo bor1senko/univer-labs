@@ -1,8 +1,9 @@
-    # -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
 from forms import SignUpForm
 from django.contrib.auth import login, logout, authenticate
+from models import Subject
 
 
 
@@ -26,8 +27,9 @@ def signup(request):
 
 
 def accaunt(request):
-    user =request.user
-    return render(request, 'admin_UI/accaunt.html', {'user': user})
+    user = request.user
+    subjects = Subject.objects.filter(teacher=user)
+    return render(request, 'admin_UI/account.html', {'user': user, 'subjects': subjects})
 
 
 def signin(request):
@@ -38,7 +40,7 @@ def signin(request):
         if user is not None:
             if user.is_active:
                 login(request, user)
-                return HttpResponseRedirect('/accaunt/')
+                return HttpResponseRedirect('/account/')
             else:
                 return render(request, 'admin_UI/not_active.html')
         else:
@@ -48,5 +50,3 @@ def signin(request):
 def logout_user(request):
     logout(request)
     return HttpResponseRedirect('/')
-
-            

@@ -7,13 +7,23 @@
 
 
 {% block content %}
+  <div ng-controller="GroupCtrl">
   <div id="wspace" class="container-fluid ">
-    <p id="" >{{user}}</p>
+    <!-- Content -->
+    <h3 ng-bind="subject.data.name"></h2>
+    <ul>
+      <li ng-repeat='item in subject.data.groups' >
+        {[item.name]}
+      </li>
+    </ul>
 
+
+
+
+    <!-- end of content -->
   </div>
-{% endblock %}
 
-{% block menu %}
+  <!-- menu -->
   <div id="menu" class="menu">
     <img class="img-circle  avatar_ac" src="/{{user.avatar.url}}/" alt="">
     <div class="info_user">
@@ -21,21 +31,18 @@
         <p>{{user.first_name}}</p>
         <p id="info-p3"><span class="glyphicon glyphicon-chevron-down c" > </span></p>
     </div>
-
     <div class="info_menu_top">
-
       <ul class="info_menu">
         <li> <span class="glyphicon glyphicon-cog" ></span> Настройки </li>
         <li> <span class="glyphicon glyphicon-log-out" ></span> <a href="/logout/">выйти</a> </li>
       </ul>
       <hr class="sepr">
-
-
-      <ul id="d-menu" class="dashboard-user">
+      <ul id="d-menu-labs" class="dashboard-user">
         <li><span class="glyphicon glyphicon-list-alt" ></span> лабораторные <span  class="glyphicon glyphicon-chevron-down d-menu-arrow" > </span></li>
-        <li><span class="glyphicon glyphicon-record"></span> Oсис</li>
-        <li><span class="glyphicon glyphicon-record"></span> итирод</li>
-        <li><span class="glyphicon glyphicon-plus-sign" ></span> добавить</li>
+        {% for item in subjects %}
+            <li ng-click="choiseSubject({{item.pk}})" ><span class="glyphicon glyphicon-record"></span> {{item.name}}</li>
+        {% endfor %}
+          <li class="add-subj"><span class="glyphicon glyphicon-plus-sign" ></span> добавить</li>
       </ul>
 
       <ul id="d-menu" class="dashboard-user">
@@ -45,19 +52,9 @@
         <li><span class="glyphicon glyphicon-plus-sign" ></span> добавить</li>
       </ul>
 
-      <ul id="d-menu" class="dashboard-user">
-        <li><span class="glyphicon glyphicon-briefcase" ></span> Мои планчики<span  class="glyphicon glyphicon-chevron-down d-menu-arrow" > </span></li>
-        <li><span class="glyphicon glyphicon-record"></span> Oсис</li>
-        <li><span class="glyphicon glyphicon-record"></span> итирод</li>
-        <li><span class="glyphicon glyphicon-plus-sign" ></span> добавить</li>
-      </ul>
-
-
-
   </div>
 
-
-
-
   </div>
+    </div>
+  <!-- end of menu -->
 {% endblock %}
