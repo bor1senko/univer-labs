@@ -12,6 +12,10 @@ class GroupAdmin(admin.ModelAdmin):
 class RatingAdmin(admin.ModelAdmin):
     list_display = ('subject', 'student', 'complid')
 
+class GroupShedulAdmin(admin.ModelAdmin):
+    search_fields = ('name',)
+
+admin.site.register(GroupShedul, GroupShedulAdmin)
 admin.site.register(Teacher)
 admin.site.register(Faculty)
 admin.site.register(Specialty)

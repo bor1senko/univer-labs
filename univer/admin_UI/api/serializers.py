@@ -1,5 +1,11 @@
-from admin_UI.models import Faculty, Specialty, Group, Subject, Rating, Student
+from admin_UI.models import Faculty, Specialty, Group, Subject, Rating, Student, GroupShedul
 from rest_framework import serializers
+
+class GroupShedulSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = GroupShedul
+        fields = '__all__'
+
 
 
 class GroupSerializer(serializers.ModelSerializer):

@@ -5,24 +5,62 @@
 {% if user %}
   <a href="/account/"> <p  class="btnlog user-f-name">{{user.first_name}}</p></a>
 {% else %}
-  <p id="signin" class="btnlog">Войти</p>
+  <p id="popupOn" class="btnlog">Войти</p>
 {% endif %}
 
 {% endblock %}
 
 {% block content %}
-<div id="conten" class="container">
+<div id="conten" ng-controller="ShedulGroupCtrl" class="container">
+<div class="wrap-search">
   <div class="search-div">
-    <form id="search" class="search" action="#" method="post">
-      <input id="q-text" type="text" name="q" value="поиск" title="поиск"
-      onblur="this.value=(this.value=='')?this.title:this.value;"
-     onfocus="this.value=(this.value==this.title)?'':this.value;">
+    <form id="search" class="search" ng-submit="submit()" method="get">
+      <input id="q-text" type="text" name="q" ng-model="requestGroup"  placeholder="найти">
     <button classtype="submit" name="button"> <span class="glyphicon glyphicon-search"></span></button>
   </form>
   </div>
+  <p class="cur-week" ng-bind="curWeek"> </p>
+  <ul class="tabs-menu">
+    <li ng-click="changeChoiseAction(1)" ng-class="{active: 1 === choiseAction}" > лабараторные</li>
+    <li ng-click="changeChoiseAction(2)" ng-class="{active: 2 === choiseAction}" > расписание</li>
+</ul>
+</div>
+  <div class="groupNotExist" ng-if="groups.group === null">
+     <span ng-bind="qGroup" ></span>
   </div>
 
 
+
+  <div  class="schedul row "  ng-if="groups.group !== null">
+    <div  aver  ng-repeat="item in groups.data" class="cardWeekDay col-xs-12 col-sm-12 col-md-6 col-lg-4">
+      <div  class="inCardWeekDay">
+        <p ng-bind="item.weekDay"></p>
+
+        <table class="tb">
+          <tr ng-repeat="item1 in item.schedule" >
+            <td  ng-class="{pz: 'ПЗ' === item1.lessonType, lk: 'ЛК' === item1.lessonType, lr: 'ЛР' === item1.lessonType, }">
+              {[item1.lessonTime]} {[item1.subject]}<br>
+              <p  class="tdText" ng-if="item1.employee.lastName">
+                  {[item1.employee.lastName]} {[item1.employee.firstName[0]]}. {[item1.employee.middleName[0]]}.
+              </p>
+                {[item1.auditory]}
+            </td>
+          </tr>
+        </table>
+
+      </div>
+    </div>
+</div>
+
+
+  </div>
+
+
+
+
+
+
+<!-- ppopup for signin-->
   <div id="hidelayout" class="hidelayout"> </div>
   <form id="popup" class="popup" action="/signin/" method="post">
     {% csrf_token %}
@@ -40,5 +78,7 @@
     <a class="log_a" href="/signup">Зарегистрироваться</a>
     <a class="pas_a" href="#">Забыли пароль ?</a>
   </form>
+
+<!-- and -->
 
 {% endblock %}

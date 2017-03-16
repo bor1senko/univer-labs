@@ -1,11 +1,40 @@
+function resizeDiv(elements){
+  var maxHeight = 0;
+  elements.each(function() {
+  var  curH = $(this).height();
+    if (curH  > maxHeight) {
+      maxHeight = curH;
+    }
+  });
+  elements.height(maxHeight);
+  console.log('df')
+};
+
+
+function menuClose() {
+  $('#menu').animate({right: '-250px'});
+  $('#wrapperr').animate({left: '0px'});
+  $('#menu').removeClass('mopen');
+  $('#menu-opener').removeClass('glyphicon-remove').addClass('glyphicon-align-justify');
+  $('#menu-opener').css({
+    transform:''
+  });
+};
+
+function menuOpen(){
+  $('#menu').animate({right: '0px'});
+  $('#wrapperr').animate({left: '-250px'});
+  $('#menu').addClass('mopen');
+  $('#menu-opener').removeClass('glyphicon-align-justify').addClass('glyphicon-remove');
+  $('#menu-opener').css({
+    transform:'translateX(65px)'
+  });
+};
+
 $(document).ready(function(){
   PositionCenter($("#popup"));
 
-  $("#pc").click(function(){
-
-  });
-
-  $("#signin").click(function(){
+  $("#popupOn").click(function(){
     PositionCenter($("#popup"));
     $("#hidelayout, #popup").fadeIn(300);
   });
@@ -19,25 +48,15 @@ $(document).ready(function(){
     readURL(this);
   });
 
+
+
   $('#menu-opener').click(function (){
     if($('#menu').hasClass('mopen')){
       //close
-      $('#menu').animate({right: '-250px'});
-      $('#wrapperr').animate({left: '0px'});
-      $('#menu').removeClass('mopen');
-      $('#menu-opener').removeClass('glyphicon-remove').addClass('glyphicon-align-justify');
-      $('#menu-opener').css({
-        transform:''
-      });
+      menuClose();
     } else {
       //open
-      $('#menu').animate({right: '0px'});
-      $('#wrapperr').animate({left: '-250px'});
-      $('#menu').addClass('mopen');
-      $('#menu-opener').removeClass('glyphicon-align-justify').addClass('glyphicon-remove');
-      $('#menu-opener').css({
-        transform:'translateX(65px)'
-      });
+      menuOpen();
     }
   });
 
@@ -76,10 +95,10 @@ $('.dashboard-user li:first-child').click(function(){
       });
   }
   else {
-    //open
+    //open 35
       $(this).parent('ul').addClass('d-menu-open');
       $(this).parent('ul').css({
-        height: ($(this).parent('ul').children().length-1) *21 + 35 +'px'
+        height: ($(this).parent('ul').children().length-2) *21 + 35 + 27 +'px'
       });
       $(this).find('.d-menu-arrow').css({
         transform: 'rotateX(180deg)'
@@ -87,8 +106,15 @@ $('.dashboard-user li:first-child').click(function(){
   }
 });
 
-$('.add-subj').click(function(){
-  alert("sdfs");
+
+$('.flipFont').click(function(){
+      $(".flipBack").fadeIn(300);
+      $(".flipFont").fadeOut(300);
+});
+
+$('.close-addSubj').click(function(){
+      $(".flipBack").fadeOut(300);
+      $(".flipFont").fadeIn(300);
 });
 
 

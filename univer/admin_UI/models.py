@@ -4,6 +4,14 @@ from datetime import datetime
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, AbstractUser
 
+class GroupShedul(models.Model):
+    name = models.CharField(max_length=30)
+    idForShedul = models.CharField(max_length=30)
+    cours = models.IntegerField()
+
+    def __str__(self):
+        return self.name
+
 class UserManager(BaseUserManager):
     def _create_user(self, email, password, **extra_fields):
         if not email:

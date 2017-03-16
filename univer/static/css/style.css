@@ -44,9 +44,71 @@ body {
 .search-div {
   width: 500px;
   margin: auto;
-  margin-top: 40px;
+  background:#ededed ;
+  position: absolute;
+  left: 10px;
+  top: 10px;
   }
 
+.wrap-search {
+  margin: auto;
+  margin-top: 40px;
+  width: 520px;
+  height: 75px;
+  position: relative;
+}
+
+.cur-week {
+  position: absolute;
+  left: 15px;
+  top: 45px;
+  color: #325992;
+  font-family: sans-serif;
+}
+
+
+.tabs-menu {
+  position: absolute;
+  height: 30px;
+  width: 210px;
+  right: 5px;
+  top: 45px;
+  color: #5e5e5e;
+  font-family: sans-serif;
+  list-style-type: none;
+  padding-left: 0px;
+
+}
+
+.tabs-menu li {
+  display: inline-block;
+  height: 30px;
+  width: 100px;
+  text-align: center;
+  cursor: default;
+}
+
+.groupNotExist {
+  width: 500px;
+  height: 50px;
+  font-size: 25px;
+  margin: auto;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.groupNotExist span {
+  font-size: 27px;
+}
+
+.tabs-menu li:not(.active):hover {
+  color: black;
+}
+
+.tabs-menu .active {
+  color: #4e75af;
+  border-bottom: 2px solid #325992;
+}
 
 .search {
  width: 500px;
@@ -455,5 +517,132 @@ p input#id_avatar {
   position: absolute;
   right: 5px;
   top: 3px;
-  transition:  0.5s;
+  transition: 0.5s;
+}
+
+.dashboard-user .flipli {
+  height: 24px;
+}
+
+
+.flip {
+  height: 24px;
+  width: 190px;
+ position: relative;
+ transition: 0.7s;
+}
+
+.flip .flipBack {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 24px;
+  width: 190px;
+  display: none;
+}
+
+.dashboard-user .flipli .flip .flipFont span{
+  display: block;
+  float: left;
+  line-height: 20px;
+}
+.dashboard-user .flipli .flip .flipFont p{
+  display: block;
+  float: left;
+  height: 24px;
+
+}
+
+.dashboard-user .flipli .flip .flipBack .close-addSubj{
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  font-size: 14px;
+  left: 180px;
+  top: 5px;
+}
+
+.flip .flipFont {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 24px;
+  width: 190px;
+}
+
+.addSubj {
+  height: 24px;
+  width: 190px;
+}
+
+
+.addSubj p input {
+  height: 24px;
+  width: 146px;
+  border: none;
+  padding-left: 5px;
+  padding-right: 5px;
+  background: white;
+  color: #494845;
+}
+
+.addSubj p input:focus {
+  outline: none;
+}
+
+.addSubj p .btnAddSubj {
+  position: absolute;
+  height: 24px;
+  width: 24px;
+  border: none;
+  left: 146px;
+  top: 0px;
+  background-color: #dfe2df;
+}
+
+
+.dashboard-user  .flipli .flip .flipBack .addSubj p button span{
+  color: #325992;
+}
+
+
+.cardWeekDay {
+
+  margin-top: 10px;
+}
+
+.cardWeekDay p {
+  text-align: center;
+  height: 25px;
+  font-size: 20px;
+  font-family: sans-serif;
+
+}
+
+.schedul {
+  margin-top: 40px;
+  margin-bottom: 60px;
+}
+
+
+.inCardWeekDay {
+
+  border: 1px solid black;
+}
+
+.tb{
+  width: 100%;
+}
+
+
+.pz {
+ background: #74e693;
+}
+
+.lk{
+background:  #1f8cf0;
+}
+
+.lr{
+  background: #e95757;
 }

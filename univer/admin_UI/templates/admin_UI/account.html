@@ -17,9 +17,6 @@
       </li>
     </ul>
 
-
-
-
     <!-- end of content -->
   </div>
 
@@ -42,19 +39,37 @@
         {% for item in subjects %}
             <li ng-click="choiseSubject({{item.pk}})" ><span class="glyphicon glyphicon-record"></span> {{item.name}}</li>
         {% endfor %}
-          <li class="add-subj"><span class="glyphicon glyphicon-plus-sign" ></span> добавить</li>
+
+        <li class="flipli">
+            <div class="flip">
+                <div  class="flipFont">
+                  <span class="glyphicon glyphicon-plus-sign" ></span> <p>добавить</p>
+                </div>
+
+                <div  class="flipBack">
+                    <span class="close-addSubj glyphicon glyphicon-remove" ></span>
+                  <form class="addSubj" action="index.html" method="post">
+                    {% csrf_token %}
+                      <p>
+                          <input type="text" name="" value="">
+                          <button class="btnAddSubj" type="submit" name="button">
+                              <span class="glyphicon glyphicon-arrow-right" ></span>
+                          </button>
+                      </p>
+                  </form>
+            </div>
+            </div>
+        </li>
+
+
       </ul>
 
-      <ul id="d-menu" class="dashboard-user">
-        <li><span class="glyphicon glyphicon-comment" ></span> Мои сообщения <span  class="glyphicon glyphicon-chevron-down d-menu-arrow" > </span></li>
-        <li><span class="glyphicon glyphicon-record"></span> Oсис</li>
-        <li><span class="glyphicon glyphicon-record"></span> итирод</li>
-        <li><span class="glyphicon glyphicon-plus-sign" ></span> добавить</li>
-      </ul>
 
   </div>
 
   </div>
+
+
     </div>
   <!-- end of menu -->
 {% endblock %}

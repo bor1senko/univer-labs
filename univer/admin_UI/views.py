@@ -3,7 +3,10 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect, HttpResponse, JsonResponse
 from forms import SignUpForm
 from django.contrib.auth import login, logout, authenticate
-from models import Subject
+from django.contrib.auth.decorators import login_required
+from models import Subject, GroupShedul, Teacher
+import requests
+import xmltodict
 
 
 
@@ -25,12 +28,14 @@ def signup(request):
             return HttpResponseRedirect('/')
     return render(request, 'admin_UI/signup.html', {'form': form})
 
-
+@login_required(login_url='/')
 def accaunt(request):
     user = request.user
-    subjects = Subject.objects.filter(teacher=user)
-    return render(request, 'admin_UI/account.html', {'user': user, 'subjects': subjects})
-
+    if isinstance(user, Teacher):
+        subjects = Subject.objects.filter(teacher=user)
+        return render(request, 'admin_UI/account.html', {'user': user, 'subjects': subjects})
+    else:
+        return HttpResponseRedirect('/')
 
 def signin(request):
     if request.method == 'POST':
